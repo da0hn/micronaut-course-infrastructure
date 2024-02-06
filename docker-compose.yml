@@ -1,5 +1,14 @@
 version: '3.9'
 services:
+  consul-service-discovery:
+    image: consul:1.15.4
+    container_name: consul-service-discovery
+    hostname: consul-service-discovery
+    restart: always
+    ports:
+      - "8500:8500"
+    networks:
+      - micronaut-course-network
   vehicle-service-db:
     image: postgres:16.1
     container_name: vehicle-service-db
